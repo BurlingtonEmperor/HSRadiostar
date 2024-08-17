@@ -5,17 +5,40 @@
     <link href="/styles/style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <section class="large" id="logo">
-      HSRadiostar
-    </section>
-    <section id="button-placer">
-      <section id="begin-broadcast" class="button">
-        Start Broadcasting
+    <section id="main-page">
+      <section class="large" id="logo">
+        HSRadiostar
       </section>
-      <section id="find-station" class="button">
-        Find a Station
+      <section id="button-placer">
+        <section id="begin-broadcast" class="button">
+          Start Broadcasting
+        </section>
+        <section id="find-station" class="button">
+          Find a Station
+        </section>
+      </section>
+      <br/>
+      <section class="mid radio-font" id="station-list-text">
+        Popular Stations
       </section>
     </section>
+    
+    <section id="broadcasting-room">
+      <section class="mid radio-font give-shadow">
+        Broadcasting Room
+      </section>
+      <section class="button-container">
+        <section class="button" id="return-from-bd">
+          Return
+        </section>
+      </section>
+    </section>
+
+    <!-- Libraries -->
+    <script src="/scripts/libraries/jquery.min.js"></script>
+    
+    <!-- Scripts-->
+    <script src="/scripts/fx.js"></script>
     <script src="/scripts/frontend.js"></script>  
   </body>
 </html>
