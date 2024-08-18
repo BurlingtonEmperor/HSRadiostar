@@ -136,12 +136,17 @@ tuneIn.onclick = function () {
           fadePage(stationFinder, quicktimePlayer);
           $("iframe").show();
           setTimeout(function () {
-            $(".playButton").click();
-            $("path").click();
-            $("circle").click();
-            $(".sc-media").click();
-
+            // $(".playButton").click();
+            // $("path").click();
+            // $("circle").click();
+            // $(".sc-media").click();
+            $(".playButton__play").click();
             $("iframe").hide();
+
+            let items = document.querySelectorAll(".playButton__play");
+            for (let i = 0; i < items.length; i++) {
+              items[i].click();
+            }
           }, 700);
         }
 
