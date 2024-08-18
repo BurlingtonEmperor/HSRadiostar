@@ -19,6 +19,7 @@ html {
 body {
   margin: 0;
   background-color: #f3a462;
+  background-size: cover;
 }
 
 /* Classes */
