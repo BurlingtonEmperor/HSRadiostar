@@ -3,6 +3,7 @@
 const mainPage = document.getElementById("main-page");
 const broadcastingRoom = document.getElementById("broadcasting-room");
 const broadcastingFinish = document.getElementById("broadcasting-finish");
+const stationFinder = document.getElementById("station-finder");
 
 // Form values
 
@@ -22,8 +23,12 @@ const copyTexter = document.getElementById("copy-texter");
 const beginBroadcast = document.getElementById("begin-broadcast");
 const returnFromBroadcast = document.getElementById("return-from-bd");
 
+const findStation = document.getElementById("find-station");
+
 const letsBroadcast = document.getElementById("lets-broadcast");
 const letsRock = document.getElementById("lets-rock");
+
+const tuneIn = document.getElementById("tune-in");
 
 beginBroadcast.onclick = function () {
   fadePage(mainPage, broadcastingRoom);
@@ -66,4 +71,15 @@ letsRock.onclick = function () {
   copyTexter.innerText += " (COPIED!)";
 
   fadePage(broadcastingFinish, mainPage);
+
+  setTimeout(function () {
+    copyTexter.innerText = "";
+    playlistLink.value = "";
+    imageLink.value = "";
+    graphicSwitchTime.value = "60";
+  }, 500);
+}
+
+findStation.onclick = function () {
+  fadePage(mainPage, stationFinder);
 }
