@@ -4,6 +4,7 @@ const mainPage = document.getElementById("main-page");
 const broadcastingRoom = document.getElementById("broadcasting-room");
 const broadcastingFinish = document.getElementById("broadcasting-finish");
 const stationFinder = document.getElementById("station-finder");
+const quicktimePlayer = document.getElementById("quicktime-player");
 
 // Form values
 
@@ -22,6 +23,7 @@ graphicSwitchTime.value = "60";
 const copyText = document.getElementById("copy-text");
 const copyTexter = document.getElementById("copy-texter");
 const stationError = document.getElementById("station-error");
+const playerPlace = document.getElementById("player-place");
 
 // Buttons
 
@@ -109,8 +111,40 @@ tuneIn.onclick = function () {
       }
 
       else {
-        let realArray = JSON.parse(window.btoa(broadcastCodeArray[0]));
-        alert(realArray.length);
+        let realArray = window.atob(broadcastCodeArray[0]);
+        let actualRealArray = JSON.parse(realArray);
+        let carouselOfThings = 0;
+
+        setInterval(function () {
+          if (carouselOfThings == (actualRealArray.length - 1)) {
+            carouselOfThings = 0;
+          }
+
+          if (actualRealArray.length < 2) {
+            // do nothing
+          }
+
+          else {
+            carouselOfThings += 1;
+          }
+          document.body.style.backgroundImage = "url('" + actualRealArray[carouselOfThings] + "')";
+        }, parseInt(broadcastCodeArray[1]) * 1000);
+
+        if (stationLink.value.includes("<iframe")) {
+          $("#player-place").append(String(stationLink.value));
+          $("iframe").hide();
+          fadePage(stationFinder, quicktimePlayer);
+          setTimeout(function () {
+            $(".playButton").click();
+            $("path").click();
+            $("circle").click();
+            $(".sc-media").click();
+          }, 700);
+        }
+
+        else {
+          stationError.innerText = "Error: Not a valid embed code.";
+        }
       }
     }
 
