@@ -115,6 +115,8 @@ tuneIn.onclick = function () {
         let actualRealArray = JSON.parse(realArray);
         let carouselOfThings = 0;
 
+        document.body.style.backgroundImage = "url('" + actualRealArray[carouselOfThings] + "')";
+
         setInterval(function () {
           if (carouselOfThings == (actualRealArray.length - 1)) {
             carouselOfThings = 0;
@@ -160,3 +162,8 @@ tuneIn.onclick = function () {
     }
   }
 }
+
+// Search Params
+
+const searchParams = new URLSearchParams(String(location));
+// const 
