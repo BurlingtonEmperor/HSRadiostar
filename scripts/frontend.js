@@ -58,7 +58,7 @@ letsBroadcast.onclick = function () {
     }
 
     else {
-      let imagelinkArray = imageLink.innerText.split(",");
+      let imagelinkArray = imageLink.value.split(",");
       let stringifiedArray = JSON.stringify(imagelinkArray);
       let encodedArray = window.btoa(stringifiedArray);
 
