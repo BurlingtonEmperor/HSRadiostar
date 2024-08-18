@@ -12,4 +12,6 @@ beginBroadcast.onclick = function () {
   fadePage(mainPage, broadcastingRoom);
 }
 
-returnFromBroadcast.onclick = function () {}
+returnFromBroadcast.onclick = function () {
+  fadePage(broadcastingRoom, mainPage);
+}
