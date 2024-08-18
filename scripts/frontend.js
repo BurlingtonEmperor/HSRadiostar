@@ -141,7 +141,6 @@ tuneIn.onclick = function () {
             // $("circle").click();
             // $(".sc-media").click();
             $(".playButton__play").click();
-            $("iframe").hide();
 
             let items = document.querySelectorAll(".playButton__play");
             for (let i = 0; i < items.length; i++) {
