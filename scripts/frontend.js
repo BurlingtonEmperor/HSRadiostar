@@ -14,6 +14,8 @@ const graphicSwitchTime = document.getElementById("graphic-switch-time");
 
 const broadcastError = document.getElementById("broadcast-error");
 graphicSwitchTime.value = "60";
+const copyText = document.getElementById("copy-text");
+const copyTexter = document.getElementById("copy-texter");
 
 // Buttons
 
@@ -21,6 +23,7 @@ const beginBroadcast = document.getElementById("begin-broadcast");
 const returnFromBroadcast = document.getElementById("return-from-bd");
 
 const letsBroadcast = document.getElementById("lets-broadcast");
+const letsRock = document.getElementById("lets-rock");
 
 beginBroadcast.onclick = function () {
   fadePage(mainPage, broadcastingRoom);
@@ -42,13 +45,25 @@ letsBroadcast.onclick = function () {
     }
 
     else {
-      let imagelinkArray = imageLink.split(",");
+      let imagelinkArray = imageLink.innerText.split(",");
       let stringifiedArray = JSON.stringify(imagelinkArray);
       let encodedArray = window.btoa(stringifiedArray);
 
-      let finalCoded = encodedArray + "*(#//" + String(graphicSwitchTime);
+      let finalCoded = encodedArray + "*(#//" + String(graphicSwitchTime.value);
 
       fadePage(broadcastingRoom, broadcastingFinish);
+      copyTexter.innerText = finalCoded;
+      copyText.value = finalCoded;
     }
   }
+}
+
+letsRock.onclick = function () {
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); 
+
+  navigator.clipboard.writeText(copyText.value);
+  copyTexter.innerText += " (COPIED!)";
+
+  fadePage(broadcastingFinish, mainPage);
 }

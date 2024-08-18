@@ -43,6 +43,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.pixel-font {
+  font-family: pixel-tandy;
+}
+
 .give-shadow {
   text-shadow: 2px 2px 5px #262626;
 }
@@ -100,6 +104,10 @@ body {
 #station-list-text {
   right: 0;
   position: relative;
+}
+
+#copy-text {
+  display: none;
 }
 
 /* Button IDs */

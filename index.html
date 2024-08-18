@@ -38,7 +38,7 @@
       <p id="broadcast-error" class="red arial-font"></p>
       <br/>
       <section>
-        <p class="small arial-font">Soundcloud Playlist/Bandcamp Album link:<a class="red">*</a> <input type="url" class="text-input" id="playlist-link" required/></p>
+        <p class="small arial-font">Soundcloud Playlist link:<a class="red">*</a> <input type="url" class="text-input" id="playlist-link" required/></p>
         <p class="small arial-font">Images to use as background aesthetic (optional): Please format as links.</p>
         <p class="small arial-font">Seperate by commas: <input type="text" class="text-input" id="imagelist"/></p>
         <p class="small arial-font">Time before graphic-switch (if using images): <input type="number" class="text-input" id="graphic-switch-time"/> seconds</p>
@@ -51,7 +51,22 @@
       </section>
     </section>
 
-    <section id="broadcasting-finish"></section>
+    <section id="broadcasting-finish">
+      <section class="mid radio-font give-shadow">
+        Records to Release
+      </section>
+      <br/>
+      <br/>
+      <p class="small arial-font">The below code should be copy and pasted into the description of your Soundcloud playlist.</p>
+      <p class="small arial-font">If it doesn't work, please manually copy the code.</p>
+      <p class="small pixel-font" id="copy-texter"></p>
+      <input id="copy-text" type="text"/>
+      <section class="button-container">
+        <section class="button" id="lets-rock">
+          Let's Rock (Copy to Clipboard)!
+        </section>
+      </section>
+    </section>
     
     <!-- Libraries -->
     <script src="/scripts/libraries/jquery.min.js"></script>
