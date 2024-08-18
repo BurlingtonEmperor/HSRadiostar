@@ -134,11 +134,14 @@ tuneIn.onclick = function () {
           $("#player-place").append(String(stationLink.value));
           $("iframe").hide();
           fadePage(stationFinder, quicktimePlayer);
+          $("iframe").show();
           setTimeout(function () {
             $(".playButton").click();
             $("path").click();
             $("circle").click();
             $(".sc-media").click();
+
+            $("iframe").hide();
           }, 700);
         }
 
