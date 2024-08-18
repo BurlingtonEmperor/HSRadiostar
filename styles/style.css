@@ -117,3 +117,7 @@ body {
 #broadcasting-room {
   display: none;
 }
+
+#broadcasting-finish {
+  display: none;
+}
