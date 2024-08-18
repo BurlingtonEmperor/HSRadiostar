@@ -11,12 +11,17 @@ const playlistLink = document.getElementById("playlist-link");
 const imageLink = document.getElementById("imagelist");
 const graphicSwitchTime = document.getElementById("graphic-switch-time");
 
+const stationLink = document.getElementById("station-link");
+const bdCode = document.getElementById("bd-code");
+
 // DOM CHANGE 
 
+let codeStorage = "";
 const broadcastError = document.getElementById("broadcast-error");
 graphicSwitchTime.value = "60";
 const copyText = document.getElementById("copy-text");
 const copyTexter = document.getElementById("copy-texter");
+const stationError = document.getElementById("station-error");
 
 // Buttons
 
@@ -29,6 +34,7 @@ const letsBroadcast = document.getElementById("lets-broadcast");
 const letsRock = document.getElementById("lets-rock");
 
 const tuneIn = document.getElementById("tune-in");
+const returnFromBF = document.getElementById("return-from-bf");
 
 beginBroadcast.onclick = function () {
   fadePage(mainPage, broadcastingRoom);
@@ -55,6 +61,7 @@ letsBroadcast.onclick = function () {
       let encodedArray = window.btoa(stringifiedArray);
 
       let finalCoded = encodedArray + "*(#//" + String(graphicSwitchTime.value);
+      codeStorage = finalCoded;
 
       fadePage(broadcastingRoom, broadcastingFinish);
       copyTexter.innerText = finalCoded;
@@ -70,7 +77,7 @@ letsRock.onclick = function () {
   navigator.clipboard.writeText(copyText.value);
   copyTexter.innerText += " (COPIED!)";
 
-  fadePage(broadcastingFinish, mainPage);
+  fadePage(broadcastingFinish, stationFinder);
 
   setTimeout(function () {
     copyTexter.innerText = "";
@@ -80,6 +87,35 @@ letsRock.onclick = function () {
   }, 500);
 }
 
+returnFromBF.onclick = function () {
+  fadePage(stationFinder, mainPage);
+}
+
 findStation.onclick = function () {
   fadePage(mainPage, stationFinder);
+}
+
+tuneIn.onclick = function () {
+  if (bdCode.value == "" || stationLink.value == "") {
+    stationError.innerText = "Required fields were not filled in.";
+  }
+
+  else {
+    if (bdCode.value.includes("*(#//")) {
+      let broadcastCodeArray = bdCode.value.split("*(#//");
+
+      if (broadcastCodeArray[0] == "") {
+        // do nothing
+      }
+
+      else {
+        let realArray = JSON.parse(window.btoa(broadcastCodeArray[0]));
+        alert(realArray.length);
+      }
+    }
+
+    else {
+      stationError.innerText = "Error: Invalid broadcast code";
+    }
+  }
 }

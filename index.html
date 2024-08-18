@@ -57,8 +57,6 @@
       </section>
       <br/>
       <br/>
-      <p class="small arial-font">The below code should be copy and pasted into the description of your Soundcloud playlist.</p>
-      <p class="small arial-font">If it doesn't work, please manually copy the code.</p>
       <p class="small pixel-font" id="copy-texter"></p>
       <input id="copy-text" type="text"/>
       <section class="button-container">
@@ -72,15 +70,25 @@
       <section class="mid radio-font give-shadow">
         Find a Station
       </section>
+      <section class="button-container">
+        <section class="button" id="return-from-bf">
+          Return
+        </section>
+      </section>
       <br/>
       <br/>
-      <p class="small arial-font">Enter the Soundcloud link: <input id="station-link" type="text" class="text-input"/></p>
+      <p class="small arial-font red" id="station-error"></p>
+      <p class="small arial-font">Enter your Broadcast Code: <input id="bd-code" type="text" class="text-input"/></p>
+      <p class="small arial-font">(Click "Share" and then "Embed" on SoundCloud):</p>
+      <p class="small arial-font">Enter the Soundcloud Embed Code: <input id="station-link" type="text" class="text-input"/></p>
       <section class="button-container">
         <section class="button" id="tune-in">
           Tune in
         </section>
       </section>
     </section>
+
+    <section id="quicktime-player"></section>
     
     <!-- Libraries -->
     <script src="/scripts/libraries/jquery.min.js"></script>
