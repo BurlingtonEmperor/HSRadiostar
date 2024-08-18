@@ -2,10 +2,12 @@
 <html>
   <head>
     <title>HSRadiostar -- Be Your School's Own DJ!</title>
+    
     <link href="/styles/style.css" rel="stylesheet" type="text/css" />
+    <link href="radio_icon.png" rel="shortcut icon"/>
   </head>
   <body>
-    <section id="main-page">
+    <section id="main-page" class="center">
       <section class="large" id="logo">
         HSRadiostar
       </section>
@@ -36,7 +38,16 @@
       <br/>
       <br/>
       <section>
-        <p class="small arial-font">Soundcloud/Bandcamp Playlist link: <input type="text" class="text-input" id="playlist-link"/></p>
+        <p class="small arial-font">Soundcloud Playlist/Bandcamp Album link:<a class="red">*</a> <input type="url" class="text-input" id="playlist-link" required/></p>
+        <p class="small arial-font">Images to use as background aesthetic (optional): Please format as links.</p>
+        <p class="small arial-font">Seperate by commas: <input type="text" class="text-input" id="imagelist"/></p>
+        <p class="small arial-font">Time before graphic-switch (if using images): <input type="number" class="text-input" id="graphic-switch-time"/> seconds</p>
+      </section>
+      <br/>
+      <section class="button-container">
+        <section class="button" id="lets-broadcast">
+          Let's Broadcast!
+        </section>
       </section>
     </section>
     

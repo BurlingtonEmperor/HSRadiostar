@@ -74,6 +74,15 @@ body {
   outline: none;
 }
 
+.center {
+  text-align: center;
+  margin: auto;
+}
+
+.red {
+  color: red;
+}
+
 /* IDs */
 
 #logo {
@@ -85,6 +94,7 @@ body {
 #button-placer {
   display: flex;
   gap: 5px;
+  justify-content: center;
 }
 
 #station-list-text {
